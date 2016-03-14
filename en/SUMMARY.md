@@ -1,5 +1,6 @@
 # Summary
 
+* [Planning the game and history](ch1.md)
 * [Planning the game and history](ch1.md#chapter-1--planning-the-game)
 * Building the game structure and loading assets
    * ...
