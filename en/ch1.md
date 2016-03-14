@@ -1,6 +1,7 @@
 # SUPERPOWERS TUTORIAL #4
-## SUPER ASTEROIDS and SUPER SPACEWAR
-### **Chapter 1 : Planning the Game**
+## SUPER ASTEROIDS and SUPER SPACEWAR, Chapter 1 
+
+### **Planning the game**
 
 We will build three games in one, inspired by :
 
@@ -11,7 +12,7 @@ We will build three games in one, inspired by :
 * [Star Castle][3], the game that we will build as a mod example, imply shooting an Alien ship by first detroying the armor that protect it.
 
 
-### **Features list of our game :**
+### **Game features**
 
 * One or two player game (the asteroids clone is single player, the spacewar clone is multiplayer).
 * Player ship moving and shooting.
