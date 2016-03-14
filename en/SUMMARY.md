@@ -1,6 +1,6 @@
 # Summary
 
-* [Planning the game and history]()
+* [Planning the game and history](ch1.md#chapter-1-plan-the-game)
 * Building the game structure and loading assets
    * ...
 * Setting the game scene and prefabs
