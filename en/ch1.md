@@ -7,7 +7,7 @@ We will build three games in one, inspired by :
 
 * [Spacewar][1] (or Spacewar!) is one of the first video game created in 1962, it consist more or less of a simple fight between two ships.
 
-* [Asteroids][2] is a famous shooter released in 1979, it's gameblay involve a ship avoiding and shooting asteroids and aliens ships.
+* [Asteroids][2] is a famous arcade shooter released in 1979, it's gameblay involve a ship avoiding and shooting asteroids and aliens ships.
 
 * [Star Castle][3], the game that we will build as a mod example, imply shooting an Alien ship by first detroying the armor that protect it.
 
