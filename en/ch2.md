@@ -24,9 +24,6 @@ our basic structure with all the objects we will use :
 We will now see the structure of each object and loads all assets related to it.
 
 
-### **Loading and settings of assets**
-
-
 #### Game structure
 
 First, our game will have a main script that contain the global datas and functions that we will use from
@@ -200,4 +197,5 @@ Finaly, in the root of our structure we can add the Font asset that we will use 
 #### Complete structure :
 
 See the final chapter, the complete reference source to see the complete game structure combined.
-// Link
+// todo : add link
+
