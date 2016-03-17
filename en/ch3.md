@@ -1,5 +1,5 @@
 # SUPERPOWERS TUTORIAL #4
-## SUPER ASTEROIDS and SUPER SPACEWAR, Chapter 2
+## SUPER ASTEROIDS and SUPER SPACEWAR, Chapter 3
 
 
 ### **Loading and settings of assets**

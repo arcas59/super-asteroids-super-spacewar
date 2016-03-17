@@ -1,13 +1,9 @@
 # Summary
 
-* [Chapter 1 : Plan the game](ch1.md)
+* [Chapter 1 : Planning the game](ch1.md)
 * [Chapter 2: Building the game structure](ch2.md)
 * [Chapter 3: Loading and settings of assets](ch3.md)
 * [Chapter 4: Setting the game scene and prefabs](ch4.md)
-   * Game settings
-   * Game scene
-   * Menu scene
-   * Prefabs
 * Building the script structure
    * Global functions and datas
    * Global game behaviors
