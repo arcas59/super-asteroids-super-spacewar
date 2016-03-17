@@ -21,3 +21,7 @@
     * [Sounds](ch3.md#sounds)
     * [Font](ch3.md#font)
 // * [Chapter 4 : Setting the game scene and prefabs](ch4.md)
+   * Game settings
+   * Game scene
+   * Menu scene
+   * Prefabs
