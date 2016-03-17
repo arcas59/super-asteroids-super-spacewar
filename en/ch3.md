@@ -50,13 +50,22 @@ The background sprite is an upload of the file background.png with a grid size o
 ![../img/3/background.png](../img/3/background.png)
 
 
-#### **Ship 3D Models**
+#### **Ship Assets**
+
+##### **Ship 3D Models**
 
 *Note : The game is a 2D game, but we use Superpowers 3D engine to start to play with simple 3D models, we will have 3D for the players ships, the alien ship and the asteroids. 
-We use the format .obj exported from blender, you will need to unzip the .zip  from the sources to be able to upload it in superpowers.*
+We use the format .obj exported from blender to upload it in superpowers.*
+
+To the model of ship 1 (path : Ship/0/Model) we upload the ship.obj 3D model and the ship1texture.png.
+
+We do the same for ship 2 (path : Ship/0/Model), we upload the same ship.obj and as texture we upload ship2texture.png.
+
+We have now our two ships imported and ready to be used in our game :
 
 
-#### **Ship Sprites**
+![../img/3/ships.png](../img/3/ships.png)
+
 
 ##### speed sprite
 First the speed sprite apply to both ship, we upload the file speed.png and set the grid to 16 x 16, the origin to 50% and 100% (up and center), the pixel / units to 16.  
@@ -102,10 +111,13 @@ Explosion sprites have 1 animation :
 
 ##### Alien 3D Model
 
+We upload the alien.obj model and the alienTexture.png in our Alien/Model.
+ 
+![../img/3/alien.png](../img/3/alien.png)
 
 The alien sprites life, missile and explosion have the same parameters than for the ship :
 
-##### Alien life
+##### life sprite
 
 For the life sprite, we upload the alienLife.png with a grid size of 16 x 16, and pixel / unit ratio of 16.  
 Like for the ship, life sprites have 2 animations with one frame each :
@@ -135,6 +147,10 @@ Explosion sprite have 1 animation :
 
 ##### Asteroid 3D Model
 
+We upload the the path Asteroid/Model the asteroid.obj model with the texture asteroidTexture.png.
+
+![../img/3/asteroid.png](../img/3/asteroid.png)
+
 ##### explosion sprite
 
 Like the ship and alien, the asteroids have an explosion sprite, we upload the asteroidExplosion.png with a grid size of 16 x 16, and pixel / unit ratio of 16.  
@@ -142,15 +158,19 @@ Explosion sprite have 1 animation :
 
 * **explode** with the start frame to position 0 and end frame to position 5. 
 
+
 #### **Sounds**
 
-We will see the sounds and music assets in the polishing chapter.
+We upload for each sounds the sound file related. // music and sound are still in development
+
 
 #### **Font**
 
 We change the Font Type to bitmap and upload the Texture Font.png.
 
 We then change the grid size to 20 x 20 and the pixel / unit ration to 16.
+
+![../img/3/font.png](../img/3/font.png)
 
 *Note : The font is made by Pixelboy of Sparklinlab and have the same licence than the rest of the tutorial CC0*
 
