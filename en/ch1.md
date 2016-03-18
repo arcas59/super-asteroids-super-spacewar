@@ -12,6 +12,8 @@ We will build three games in one, inspired by :
 * [Star Castle][3], the game that we will build as a mod example, imply shooting an Alien ship by first detroying the armor that protect it.
 
 
+![../img/asteroids.png](../img/asteroids.png)
+
 ### **Game features**
 
 * One or two player game (the asteroids clone is single player, the spacewar clone is multiplayer).
@@ -27,6 +29,6 @@ We will build three games in one, inspired by :
 * Complete collision system between actors (ships, missiles, asteroids, alien).
 * An easy way to reuse the game objects and build new mods.
 
-[1]: https://en.wikipedia.org/wiki/Asteroids_(video_game)
-[2]: https://en.wikipedia.org/wiki/Spacewar_(video_game)
+[1]: https://en.wikipedia.org/wiki/Spacewar_(video_game)
+[2]: https://en.wikipedia.org/wiki/Asteroids_(video_game)
 [3]: https://en.wikipedia.org/wiki/Star_Castle
