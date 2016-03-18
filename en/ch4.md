@@ -165,7 +165,7 @@ To Ship/0/Prefab we add an actor Ship1 and to Ship/1/Prefab we add an actor Ship
 
 ##### Model
 
-We build an actor Model, child of Ship1 actor, with a component Model Renderer and the Ship/0/Model as Model.
+We create an actor Model, child of Ship1 actor, with a component Model Renderer and the Ship/0/Model as Model.
 We do the same for Ship2 of Ship/1/Prefab, with a component Model Renderer and the Ship/1/Model as Model.
 
 We both change the Orientation to (90, 0, 0) to see the top of the ship in 2D mode.
@@ -183,25 +183,102 @@ Here the complete structure of the prefabs :
 
 Ship/0/Prefab
 * Ship1, Position(0, 0, 0), Behavior, Class ShipBehavior
-   * Model, Position(0, 0, 0), Orientation(**90**, 0, 0), Model Renderer, Model *Ship/0/Model*
-   * Body, Position(0, 0, 0), Arcade Body 2D, Type Box, Size (4, 4)
-   * Destruction, Position(0, 0, 0), Sprite Renderer, Sprite *Ship/0/Explosion/Sprite*
+   * Model, Orientation(**90**, 0, 0), Model Renderer, Model *Ship/0/Model*
+   * Body, Arcade Body 2D, Type Box, Size (**4, 4**)
+   * Destruction, Sprite Renderer, Sprite *Ship/0/Explosion/Sprite*
+
+![../img/4/shipPrefab1.png](../img/4/shipPrefab1.png)
 
 Ship/1/Prefab
 * Ship2, Position(0, 0, 0), Behavior, Class ShipBehavior
-   * Model, Position(0, 0, 0), Orientation(**90**, 0, 0), Model Renderer, Model *Ship/1/Model*
-   * Body, Position(0, 0, 0), Arcade Body 2D, Type Box, Size (4, 4)
-   * Destruction, Position(0, 0, 0), Sprite Renderer, Sprite *Ship/1/Explosion/Sprite*
+   * Model, Orientation(**90**, 0, 0), Model Renderer, Model *Ship/1/Model*
+   * Body, Arcade Body 2D, Type Box, Size (**4, 4**)
+   * Destruction, Sprite Renderer, Sprite *Ship/1/Explosion/Sprite*
 
-![../img/4/shipPrefab.png](../img/4/shipPrefab.png)
+![../img/4/shipPrefab2.png](../img/4/shipPrefab2.png)
 
 
 #### Ship Missile Prefab
 
+We work now on Ship/0/Missile/Prefab and Ship/1/Missile/Prefab.
+
+##### Behavior
+
+We create an actor Missile with a Behavior component to which we attach the Class ShipMissileBehavior.
+
+##### Sprite
+
+Child of Missile actor, we create an actor Sprite with a component Sprite Renderer and the Sprite Ship/0/Missile/Sprite for Ship1 and Ship/1/Missile/Sprite for Ship2.
+
+![../img/4/missilePrefab1.png](../img/4/missilePrefab1.png)
+
+##### Body
+
+Child of Missile actor, we create an actor Body with a component Arcade Body 2D with a size of (0.5, 0.5).
+
+![../img/4/missilePrefab2.png](../img/4/missilePrefab2.png)
+
+Ship/0/Missile/Prefab
+* Missile, Position(0, 0, 0)
+   * Sprite, Sprite Renderer, Sprite *Ship/0/Missile/Sprite*
+   * Body, Arcade Body 2D, Type Box, Size (**0.5, 0.5**)
+
+
+Ship/1/Missile/Prefab
+* Missile, Position(0, 0, 0)
+   * Sprite, Sprite Renderer, Sprite *Ship/1/Missile/Sprite*
+   * Body, Arcade Body 2D, Type Box, Size (**0.5, 0.5**)
+
+
 #### Alien Prefab
 
+We work now on Alien/Prefab, the settings are really close to what we have done before.
+
+##### Behavior
+
+We create an actor Alien with a Behavior component to which we attach the Class AlienBehavior.
+
+##### Model
+
+We create an actor Model, child of Alien actor, with a component Model Renderer and the Alien/Model as Model.
+
+##### Body
+
+We create an actor Body, child of Alien actor with a component Arcade Body 2D with a size of (3, 2).
+
+##### Destruction
+
+We create an actor Destruction, child of Alien actor with a Sprite Renderer component with the Sprite Alien/Explosion/Sprite.
+
+Alien/Prefab
+* Alien, Position(0, 0, 0), Behavior, Class AlienBehavior
+   * Model, Model Renderer, Model *Alien/Model*
+   * Body, Arcade Body 2D, Type Box, Size (**3, 2**)
+   * Destruction, Scale (1.5, 1.5, 1.5), Sprite Renderer, Sprite *Alien/Explosion/Sprite*
+   
+![../img/4/alienPrefab.png](../img/4/alienPrefab.png)
+
+   
 #### Alien Missile Prefab
+
+We work now on Alien/Missile/Prefab.
+
+See Ship Missile description.
+
+* Missile, Position(0, 0, 0)
+   * Sprite, Sprite Renderer, Sprite *Alien/Missile/Sprite*
+   * Body, Arcade Body 2D, Type Box, Size (**0.6, 0.6**)
+
+![../img/4/missilePrefab3.png](../img/4/missilePrefab3.png)
 
 #### Asteroid Prefab
 
+We work now on Asteroid/Prefab.
+Like for the Ship and Alien we create actors with their related component and parameters.
 
+* Asteroid, Position(0, 0, 0), Behavior, Class AsteroidBehavior
+   * Model, Model Renderer, Model *Asteroid/Model*
+   * Body, Arcade Body 2D, Type Box, Size (**2, 2**)
+   * Destruction, Sprite Renderer, Sprite *Asteroid/Explosion/Sprite*
+
+![../img/4/asteroidPrefab.png](../img/4/asteroidPrefab.png)

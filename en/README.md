@@ -20,8 +20,11 @@
     * [Asteroid Assets](ch3.md#asteroid-assets)
     * [Sounds](ch3.md#sounds)
     * [Font](ch3.md#font)
-// * [Chapter 4 : Setting the game scene and prefabs](ch4.md)
-   * Game settings
-   * Game scene
-   * Menu scene
-   * Prefabs
+* [Chapter 4 : Setting the game scene and prefabs](ch4.md#setting-the-game-scene-and-prefabs)
+    * [Game scene](ch4.md#game-scene)
+    * [Menu scene](ch4.md#menu-scene)
+    * [Ship Prefab](ch4.md#ship-prefab)
+    * [Ship Missile Prefab](ch4.md#ship-missile-prefab)
+    * [Alien Prefab](ch4.md#alien-prefab)
+    * [Alien Missile Prefab](ch4.md#alien-missile-prefab)
+    * [Asteroid Prefab](ch4.md#asteroid-prefab)
