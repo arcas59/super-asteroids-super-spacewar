@@ -210,7 +210,7 @@ We now have all our datas ready to use in our program.
 #### Init game behavior
 
 The GameBehavior class in ou **Game** script will be used as the main process running when our game start after we launch it from the menu. There will be differents branch
-in this behavior depending which game is running. By example, if the game is Game.nameIndex is 0 (Asteroids), then we can spawn the alien and the asteroids, else we don't.
+in this behavior depending which game is running. *By example, if the game is Game.nameIndex is 0 (Asteroids), then we can spawn the alien and the asteroids, else we don't.*
 
 Let's start to write some process of the game.
 
@@ -474,3 +474,5 @@ Note : the parameter with ? mean that it is an optional parameter.
 
 Ok, we now have a basic game structure, if we do test and launch the game we have a timer working and the asteroids and ship on the game, but apart for the timer and the displaying of alien ship
 and asteroids nothing happen yet, for animation, we need to write individual behavior of this objects. We do that in the next chapter.
+
+[<-- back to chapter 4](ch4.md) -- [go to chapter 6 -->](ch6.md)

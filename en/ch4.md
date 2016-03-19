@@ -282,3 +282,5 @@ Like for the Ship and Alien we create actors with their related component and pa
    * Destruction, Sprite Renderer, Sprite *Asteroid/Explosion/Sprite*
 
 ![../img/4/asteroidPrefab.png](../img/4/asteroidPrefab.png)
+
+[<-- back to chapter 3](ch3.md) -- [go to chapter 5 -->](ch5.md)

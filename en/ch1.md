@@ -32,3 +32,5 @@ We will build three games in one, inspired by :
 [1]: https://en.wikipedia.org/wiki/Spacewar_(video_game)
 [2]: https://en.wikipedia.org/wiki/Asteroids_(video_game)
 [3]: https://en.wikipedia.org/wiki/Star_Castle
+
+[<-- back to Summary](README.md) -- [go to chapter 2 -->](ch2.md)

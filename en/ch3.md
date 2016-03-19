@@ -175,3 +175,5 @@ We then change the grid size to 20 x 20 and the pixel / unit ration to 16.
 *Note : The font is made by Pixelboy of Sparklinlab and have the same licence than the rest of the tutorial CC0*
 
 [1]:https://github.com/mseyne/superpowers-sources/tree/master/4SuperAsteroids
+
+[<-- back to chapter 2](ch2.md) -- [go to chapter 4 -->](ch4.md)

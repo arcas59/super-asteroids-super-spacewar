@@ -28,7 +28,7 @@
     * [Alien Prefab](ch4.md#alien-prefab)
     * [Alien Missile Prefab](ch4.md#alien-missile-prefab)
     * [Asteroid Prefab](ch4.md#asteroid-prefab)
-* [Chapter 5: Building the basic program structure](ch5.md)
-    * Global datas
-    * Init game behavior
-    * Global first functions
+* [Chapter 5: Building the basic program structure](ch5.md#building-the-basic-program-structure)
+    * [Global datas](ch5.md#global-datas)
+    * [Init game behavior](ch5.md#init-game-behavior)
+    * [Global first functions](ch5.md#global-first-functions)
