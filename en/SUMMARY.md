@@ -4,9 +4,7 @@
 * [Chapter 2: Building the game structure](ch2.md)
 * [Chapter 3: Loading and settings of assets](ch3.md)
 * [Chapter 4: Setting the game scene and prefabs](ch4.md)
-* Building the script structure
-   * Global functions and datas
-   * Global game behaviors
+* [Chapter 5: Building the basic program structure](ch5.md)
 * Writing Asteroids and Alien behavior
    * Asteroid behavior
    * Alien movements
