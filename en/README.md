@@ -32,3 +32,4 @@
     * [Global datas](ch5.md#global-datas)
     * [Init game behavior](ch5.md#init-game-behavior)
     * [Global first functions](ch5.md#global-first-functions)
+* [Chapter 6: Writing Alien and Asteroids behaviors](ch6.md)
