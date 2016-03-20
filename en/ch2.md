@@ -10,7 +10,7 @@ in all our game assets. If our scripts, sprites and others resources are well st
 it will be easier for us to find them and use them as long we are building the game.
 
 Everything in games are objects that we connect together in a common program. In our program
-we want to be able to know what object is with a quick glimpse. It is important to have a well
+we want to be able to know what object is what with a quick glimpse. It is important to have a well
 structured hierarchy and a consistent naming methodology. There is no an universal rule in the way we structure
 game assets, for the tutorial we use one among many but as you build more games, you will follow your own 
 conventions with which you feel the more comfortable.

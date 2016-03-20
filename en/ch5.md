@@ -152,7 +152,7 @@ namespace Alien{
   export const zPosition: number = 12;
   
   // Different alien sizes
-  export const sizes: number[] = [1.8, 1.7, 1.6, 1.5];
+  export const sizes: number[] = [1.6, 1.3, 1];
   
   // Linear and rotation speed of alien ship
   export let linearSpeed: number = 0.05;
@@ -246,7 +246,8 @@ class GameBehavior extends Sup.Behavior {
         if(Alien.spawnTimer > 0){
           Alien.spawnTimer--;
         // If spawnTimer finished, spawn an alien ship
-        }else{
+        }
+        else {
           Game.spawnAlien();
         }
       }
@@ -274,7 +275,8 @@ class GameBehavior extends Sup.Behavior {
           Game.updateTimer(this.timer);
         }
       // If timer at 0, then the game is finished.
-      } else {
+      } 
+      else {
         // The game is over
         Game.gameOver();
       }
@@ -407,7 +409,7 @@ We then call the function at the begining of the awake method of our Game script
       x = Sup.Math.Random.sample([-bounds.width / 2, bounds.width / 2]);
       y = Sup.Math.Random.integer(-bounds.height / 2, bounds.height / 2);
     }
-    else{
+    else {
       x = Sup.Math.Random.integer(-bounds.height / 2, bounds.height / 2);
       y = Sup.Math.Random.sample([-bounds.width / 2, bounds.width / 2]);
     }
@@ -447,7 +449,8 @@ The updateTimer function use a certain amount of time in frames and convert it t
     // For the last 10 seconds we need to add a 0 to keep 2 numbers in the timer
     if (seconds < 10) {
       timer.textRenderer.setText(minutes + ":0" + seconds);
-    }else{
+    }
+    else {
       timer.textRenderer.setText(minutes + ":" + seconds);
     }
   }
