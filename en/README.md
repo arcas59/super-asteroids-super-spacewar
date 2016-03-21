@@ -39,4 +39,4 @@
     * [Initialize ship whit Game.start](ch7.md#initialize-ship-whit-gamestart)
     * [the shipBehavior class](ch7.md#the-shipbehavior-class)
     * [Ship missiles](ch7.md#ship-missiles)
-    * [Alien missiles](ch7.md#ship-missiles)
+    * [Alien missiles](ch7.md#alien-missiles)
