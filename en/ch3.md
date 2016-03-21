@@ -67,14 +67,14 @@ We have now our two ships imported and ready to be used in our game :
 ![../img/3/ships.png](../img/3/ships.png)
 
 
-##### speed sprite
-First the speed sprite apply to both ship, we upload the file speed.png and set the grid to 16 x 16, the origin to 50% and 100% (up and center), the pixel / units to 16.  
+##### boost sprite
+First the boost sprite apply to both ship, we upload the file boost.png and set the grid to 16 x 16, the origin to 50% and 100% (up and center), the pixel / units to 16.  
 We then create two animations :
 
 * **normal** with the start frame to position 0 and end frame to position 1.
-* **speed** with the start frame to position 2 and end frame to position 3.
+* **fast** with the start frame to position 2 and end frame to position 3.
 
-![../img/3/speed.png](../img/3/speed.png)
+![../img/3/boost.png](../img/3/boost.png)
 
 We now load and set the assets two times, for the ship 1 and ship 2 (path : Ship/0 and Ship/1)
 

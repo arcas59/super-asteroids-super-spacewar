@@ -113,7 +113,7 @@ We need differents sprites for each ship, the life icon, the missile sprite and 
    * Ship (script)
    * Missile (folder)
       * Missile (script)
-   * Speed (folder)
+   * Boost (folder)
       * Sprite (sprite)
    * 0 (folder)
       * Model (3D model)

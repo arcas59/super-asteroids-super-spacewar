@@ -179,21 +179,34 @@ We set the size to 4 x 4.
 
 We create for both ship an actor Destruction, which contain the component Sprite renderer with the Sprite Explosion related to each ship.
 
+##### Boost
+
+We add to each ship two little sprite that we will use when the ship is moving, we need to place them precisely.
+We create a Boost Actor with an orientation of (0, 0, -90) to have them aligned to the Ship Orientation and set Visible to false.
+We create two new actors for the Boost actor than we call 0 and 1 and we put the first (0) in Position (2.1, -2.76, 0) and the second in Position (2.1, -2.76, 0), both with a new component
+Sprite Renderer with the Sprite Ship/Boost/Sprite.
+
 Here the complete structure of the prefabs :
 
 Ship/0/Prefab
-* Ship1, Position(0, 0, 0), Behavior, Class ShipBehavior
-   * Model, Orientation(**90**, 0, 0), Model Renderer, Model *Ship/0/Model*
+* Ship1, Position(0, 0, 0), Orientation(0, 0, **90**), Behavior, Class ShipBehavior
+   * Model, Orientation(0, **90**, **90**), Model Renderer, Model *Ship/0/Model*
    * Body, Arcade Body 2D, Type Box, Size (**4, 4**)
    * Destruction, Sprite Renderer, Sprite *Ship/0/Explosion/Sprite*
+   * Boost, Orientation (0, 0, **-90**), Visible off
+      * 0, Position (2.1, -2.76, 0), Sprite Renderer, Sprite *Ship/Boost/Sprite*
+      * 1, Position (-2.1, -2.76, 0), Sprite Renderer, Sprite *Ship/Boost/Sprite*
 
 ![../img/4/shipPrefab1.png](../img/4/shipPrefab1.png)
 
 Ship/1/Prefab
-* Ship2, Position(0, 0, 0), Behavior, Class ShipBehavior
-   * Model, Orientation(**90**, 0, 0), Model Renderer, Model *Ship/1/Model*
+* Ship2, Position(0, 0, 0), Orientation(0, 0, **-90**), Behavior, Class ShipBehavior
+   * Model, Orientation(0, **90**, **90**), Model Renderer, Model *Ship/1/Model*
    * Body, Arcade Body 2D, Type Box, Size (**4, 4**)
    * Destruction, Sprite Renderer, Sprite *Ship/1/Explosion/Sprite*
+   * Boost, Orientation (0, 0, **-90**), Visible off
+      * 0, Position (2.1, -2.76, 0), Sprite Renderer, Sprite *Ship/Boost/Sprite*
+      * 1, Position (-2.1, -2.76, 0), Sprite Renderer, Sprite *Ship/Boost/Sprite*
 
 ![../img/4/shipPrefab2.png](../img/4/shipPrefab2.png)
 
