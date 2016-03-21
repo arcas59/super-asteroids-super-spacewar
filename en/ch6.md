@@ -28,8 +28,8 @@ class AlienBehavior extends Sup.Behavior {
   [...]
 }
 Sup.registerBehavior(AlienBehavior);
-
 ```
+
 ##### Alien awakening and closing
 
 We first give life to our Alien by giving a true to the flag alive when the behavior wake up. 
@@ -133,8 +133,6 @@ Now we write the complete behavior of the ship in the update loop. Here the comp
     // Death setting
     // Set death if alien don't have lifes anymore
     if(Alien.lifes === 0){
-      // Play sound of ship destruction
-      Sup.Audio.playSound('Sounds/explosion');
       // Reset angles to default for the explosion sprite
       this.actor.setEulerAngles(0,0,0);
       // Set visible off the alien ship model
@@ -166,7 +164,6 @@ Now we write the complete behavior of the ship in the update loop. Here the comp
     }
     // If the timer is finished, shoot missile
     else {
-      Sup.Audio.playSound('Sounds/alienShot');
       this.shoot();
     }
     
@@ -293,8 +290,6 @@ We write the process of death of the asteroid in a death method than we will cal
 ```ts
 [...]
   die() {
-    // Play sound of ship destruction
-    Sup.Audio.playSound('Sounds/explosion');
     // Reset angles to default for the explosion sprite
     this.actor.setEulerAngles(0,0,0);
     // Set visible off the asteroid model

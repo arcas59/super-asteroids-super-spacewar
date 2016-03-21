@@ -33,12 +33,12 @@ namespace Game{
   
   // Game points won when target shot
   export enum points {
-  asteroidBig = 10,
-  asteroidMedium = 15,
-  asteroidSmall = 20,
-  alien = 50,
-  ship = 100 ,
-  death = -50,
+    asteroidBig = 10,
+    asteroidMedium = 15,
+    asteroidSmall = 20,
+    alien = 50,
+    ship = 100 ,
+    death = -50,
      }
   
   // Life hearts positions
@@ -50,7 +50,6 @@ namespace Game{
     ["full", "full", "full", "full", "empty"],
     ["full", "full", "full", "full", "full"]
   ]
-  
   
   // Flags to check HUD changes
   export var checkLifeHUD: boolean;
@@ -85,6 +84,10 @@ We write the ship datas :
 ```ts
 // Ship datas
 namespace Ships{
+  // Default ship size
+  export const size: number = 0.5;
+  // Default ship body
+  export const body: number = 2;
   // Starting ship score
   export const startScore: number = 0;
   // Starting ship life
@@ -471,7 +474,7 @@ Note : the parameter with ? mean that it is an optional parameter.
 ```ts
   // Close game scene and return menu game over screen
   export function gameOver(winner?: string){
-    Sup.log("Time out");
+    Sup.log("Game Over");
   }
 ```
 

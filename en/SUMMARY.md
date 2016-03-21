@@ -16,7 +16,9 @@
    * Displaying life
    * Displaying points
 * Settings menus and two differents game in one
-   * Transition menu and game over screen
+   * Main menu 
+   * Transition menu
+   * Game over screen and score display
 * Polishing the game
    * Background scrolling
    * Music and sounds
