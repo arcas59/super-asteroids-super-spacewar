@@ -43,7 +43,7 @@ namespace Game{
 ```
 It won't work yet because we need the setShip local function which is used to load the Ship actor in the game.
 
-#### the setShip funtion
+##### the setShip function
 
 We write a new function setShip which is not exported because we will use it only from the local module Game.
 
@@ -611,3 +611,5 @@ Before to be able to execute this code we need to create a new missile list when
 ``` 
 
 Good, we have now everything we need in place to start an important game mechanic, the collision system, we will see that in the next chapter.
+
+[<-- back to chapter 6](ch6.md) -- [go to chapter 8 -->](ch8.md)
