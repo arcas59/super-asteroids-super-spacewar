@@ -11,8 +11,8 @@ We will build three games in one, inspired by :
 
 * [Star Castle][3], the game that we will build as a mod example, imply shooting an Alien ship by first detroying the armor that protect it.
 
-
-![../img/asteroids.png](../img/asteroids.png)
+![img/asteroids.png](img/asteroids.png)
+![img/spacewar.png](img/spacewar.png)
 
 ### **Game features**
 
