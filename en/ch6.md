@@ -176,6 +176,8 @@ Now we write the complete behavior of the ship in the update loop. Here the comp
     if (this.position.x < -Game.bounds.width / 2) {
       this.position.x = Game.bounds.width / 2;
     }
+    
+    // Collision code will come here
   }
 [...]
 ```
@@ -407,6 +409,8 @@ Very much like the asteroid update loop, we can now write our update loop as fol
     if (this.position.y < -Game.bounds.height / 2) {
       this.position.y = Game.bounds.height / 2
     }
+    
+    // Collision code will come here
   }
 [...] 
 ```

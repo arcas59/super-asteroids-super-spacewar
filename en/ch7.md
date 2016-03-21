@@ -20,9 +20,9 @@ namespace Game{
       // Set ship 1 in game
       setShip(Ships.index.ship1);
       // Set visible false the HUD display for ship 2
-      Sup.getActor("HUD").getChild("Ship2").setVisible(false);
+      Sup.getActor("HUD").getChild("UIShip2").setVisible(false);
       // Set visible true the HUD display for alien
-      Sup.getActor("HUD").getChild("Alien").setVisible(true);
+      Sup.getActor("HUD").getChild("UIAlien").setVisible(true);
       // Set Timer HUD visible false
       Sup.getActor("HUD").getChild("Timer").setVisible(true);
     }
@@ -33,9 +33,9 @@ namespace Game{
       // Set ship 2 in game
       setShip(Ships.index.ship2);
       // Set visible true the HUD display for ship 2
-      Sup.getActor("HUD").getChild("Ship2").setVisible(true);
+      Sup.getActor("HUD").getChild("UIShip2").setVisible(true);
       // Set visible false the HUD display for alien
-      Sup.getActor("HUD").getChild("Alien").setVisible(false);
+      Sup.getActor("HUD").getChild("UIAlien").setVisible(false);
       // Set Timer HUD visible false
       Sup.getActor("HUD").getChild("Timer").setVisible(false);
     }
@@ -445,15 +445,169 @@ We now have our player ship under control, moving, rotating, slowing down, shoot
 We need now to give some behavior to the missiles.
 
 #### Ship missiles
+
+##### datas
+
+```ts
+class ShipMissileBehavior extends Sup.Behavior {
+  // shipIndex owner of this missile actor
+  shipIndex: number;
+  // Current position
+  position: Sup.Math.Vector2;
+  // Current movement velocity
+  velocity: Sup.Math.Vector2;
+  // Missile trajectory angle
+  angle: number;
+  // Timer before death
+  lifeTime: number;
+[...]
+}
+Sup.registerBehavior(ShipMissileBehavior);  
+``` 
+
+##### start and onDestroy methods
+
+When a missile born we add it to the global list of missiles that we will use to check collisions, when the missile die we remove it from the list.
+
+```ts
+  [...]
+  start() {
+    // this.actor.setLocalPosition(this.position);
+    this.velocity = new Sup.Math.Vector2(Ships.missileSpeed, 0);
+    this.velocity.rotate(this.angle);
+    this.lifeTime = Ships.missileLife;
+    // Sup.log("Missile created.")
+    Ships.missiles[this.shipIndex].push(this.actor);
+    // Sup.log(Ships.missiles);
+  }
+  [...]
+  onDestroy(){
+    // Remove the current actor from the Global list from the shipIndex owner
+    Ships.missiles[this.shipIndex].splice(Ships.missiles[this.shipIndex].indexOf(this.actor));
+  }
+  [...]
+``` 
+
+##### missile process
+
+Missile behavior is very simple, the missile born, move in one direction for a certain amount of time and then die.
+
 ```ts
 [...]
+  update() {
+    // Keep moving
+    this.position.add(this.velocity);
+    this.actor.setLocalPosition(this.position);
+    
+    // If the timer is superior to 0, decrease by one
+    if (this.lifeTime > 0) {
+      this.lifeTime--;
+      // If the timer reach 10 frame before death, play the explode animation once
+      if (this.lifeTime === 10) {
+        this.actor.getChild("Sprite").spriteRenderer.setAnimation("explode", false);
+      }
+    } 
+    // Once the lifeTime timer reach 0, destroy the Actor
+    else {
+      this.actor.destroy();
+    }
+  }
 [...]
 ``` 
+
+Before to be able to execute this code we need to create a new missile list when the game Start in the module Game of the Global script.
+
+```ts
+[...]
+  export function start(){
+    [...]
+    // Set new Ships.missiles list
+    Ships.missiles = [[], []];
+[...]
+``` 
+
 
 #### Alien missiles
+
+##### datas
+
 ```ts
+class AlienMissileBehavior extends Sup.Behavior {
+  // Current position
+  position: Sup.Math.Vector2;
+  // Current velocity
+  velocity: Sup.Math.Vector2;
+  // Target position
+  target: Sup.Math.Vector2;
 [...]
+}
+Sup.registerBehavior(AlienMissileBehavior);
+``` 
+
+##### start and onDestroy methods
+
+Like for the player ship missile, as missile born we add it to the global list of missiles that we will use to check collisions, when the missile die we remove it from the list.
+
+```ts
+[...]  
+  start() {
+    // Set current position from the actor position
+    this.position = this.actor.getLocalPosition().toVector2();
+    // Get player ship position to define as target for this missile
+    this.target = Sup.getActor("Ship1").getLocalPosition().toVector2();
+    // Get angle trajectory between this actor position and the target position
+    this.angle = this.position.angleTo(this.target);
+    // Create velocity with the Alien.missileSpeed value
+    this.velocity = new Sup.Math.Vector2(Alien.missileSpeed, 0);
+    // Convert velocity with the angle trajectory
+    this.velocity.rotate(this.angle);
+    // Add the current actor the Alien.missiles list
+    Alien.missiles.push(this.actor);
+  }
+  [...]  
+  onDestroy() {
+    // Remove this actor from the Alien.missiles list
+    Alien.missiles.splice(Alien.missiles.indexOf(this.actor), 1);
+  }
 [...]
 ``` 
 
-Now we have everything we need in place to start an important game mechanic, the collision system, we will see that in the next chapter.
+##### missile process
+
+The Alien ship missile is a bit different of the Player ship missile for using a target position (the player ship) to define the angle of trajectory. 
+The missile reach this target position and explode.
+
+```ts
+[...]  
+  update() {
+    // While the missile has no reached the target position, keep moving
+    // Add current velocity to current position
+    this.position.add(this.velocity);
+    // Update current position to missile actor
+    this.actor.setLocalPosition(this.position);
+    // Get the distance between current position and target position
+    let distance = this.target.distanceTo(this.position);
+    // When the distance to target is nearly reached, the missile explode
+    if (distance < 0.5) {
+      this.actor.getChild("Sprite").spriteRenderer.setAnimation("explode", false);
+      // When the distance is close to 0, the missile actor is destroyed
+      if (distance < 0.1) {
+        this.actor.destroy();
+      }
+    }
+  }
+[...]
+``` 
+
+Before to be able to execute this code we need to create a new missile list when the game Start in the module Game of the Global script.
+
+```ts
+[...]
+  export function start(){
+    [...]
+    // Set new Alien.missiles list
+    Alien.missiles = [];
+[...]
+``` 
+
+Good, we have now everything we need in place to start an important game mechanic, the collision system, we will see that in the next chapter.

@@ -93,7 +93,7 @@ Life sprites have 2 animations with one frame each :
 Missile sprites, upload the ship1missile.png for ship 1 and ship2missile.png for ship 2, both have a grid size of 16 x 16, and pixel / unit ratio of 16.  
 Missile sprites have 1 animation :
 
-* **explode** with the start frame to position 0 and end frame to position 3.
+* **explode** with the start frame to position 1 and end frame to position 3.
 
 ![../img/3/missile.png](../img/3/missile.png)
 
@@ -131,7 +131,7 @@ Like for the ship, life sprites have 2 animations with one frame each :
 For the missile sprite, we upload the alienMissile.png with a grid size of 16 x 16, and pixel / unit ratio of 16.  
 Missile sprite have 1 animation :
 
-* **explode** with the start frame to position 0 and end frame to position 3.
+* **explode** with the start frame to position 1 and end frame to position 3.
 
 
 ##### explosion sprite

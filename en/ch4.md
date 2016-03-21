@@ -45,12 +45,12 @@ We attach our Font to it and set the color to yellow. (code : f7eaa4)
 
 ![../img/4/gameScene3.png](../img/4/gameScene3.png)
 
-We now create a **Ship1** actor, child of HUD to position (-12, 12, 0), a **Ship2** actor, child of HUD to position (10, 12, 0) and an **Alien** actor, child of HUD to position (0, -14, 0).
+We now create a **UIShip1** actor, child of HUD to position (-12, 12, 0), a **UIShip2** actor, child of HUD to position (10, 12, 0) and an **UIAlien** actor, child of HUD to position (0, -14, 0).
 
-We set off the visibility of Ship2 actor because we want a default configuration for the Asteroids game, when we will choose the Spacewar game, visibilities will change.
+We set off the visibility of UIShip2 actor because we want a default configuration for the Asteroids game, when we will choose the Spacewar game, visibilities will change.
 
-We create two Score Actor childs of actors Ship1 and Ship2 to Position (1, 2, 0), and we attach to both of them a Text Renderer with the Font Font, 
-a default Text 0 and colors for HUD/Ship1/Score of afccf8 and for HUD/Ship2/Score of f8b194.
+We create two Score Actor childs of actors UIShip1 and UIShip2 to Position (1, 2, 0), and we attach to both of them a Text Renderer with the Font Font, 
+a default Text 0 and colors for HUD/UIShip1/Score of afccf8 and for HUD/UIShip2/Score of f8b194.
 
 ![../img/4/gameScene4.png](../img/4/gameScene4.png)
 
@@ -62,19 +62,19 @@ Alien have 5 hearts, here all the parameters of the HUD to configure the hearts 
 
 * HUD, Position (0, 0, 25), Visible true, 
    * Timer, Position (0, 14, 0), Visible true, Text Renderer, Font Font, Text 0:00, Color f7eaa4
-   * Ship1, Position (-12, 12, 0), Visible true, 
+   * UIShip1, Position (-12, 12, 0), Visible true, 
       * Score, Position (1, 2, 0), Text Renderer, Font Font, Text 0, Color afccf8
       * Life, Position (0, 0, 0)
          * 0, Position (**0**, 0, 0), Sprite Renderer, Sprite Ship/0/Life/Sprite, Animation full
          * 1, Position (**1**, 0, 0), Sprite Renderer, Sprite Ship/0/Life/Sprite, Animation full
          * 2, Position (**2**, 0, 0), Sprite Renderer, Sprite Ship/0/Life/Sprite, Animation full
-   * Ship2, Position (10, 12, 0), Visible **false**, 
+   * UIShip2, Position (10, 12, 0), Visible **false**, 
       * Score, Position (1, 2, 0), Text Renderer, Font Font, Text 0, Color f8b194
       * Life, Position (0, 0, 0)
          * 0, Position (**0**, 0, 0), Sprite Renderer, Sprite Ship/1/Life/Sprite, Animation full
          * 1, Position (**1**, 0, 0), Sprite Renderer, Sprite Ship/1/Life/Sprite, Animation full
          * 2, Position (**2**, 0, 0), Sprite Renderer, Sprite Ship/1/Life/Sprite, Animation full
-   * Alien, Position (0, -14, 0), Visible true, 
+   * UIAlien, Position (0, -14, 0), Visible true, 
       * Life, Position (0, 0, 0)
          * 0, Position (**-2**, 0, 0), Sprite Renderer, Sprite Alien/Life/Sprite, Animation full
          * 1, Position (**-1**, 0, 0), Sprite Renderer, Sprite Alien/Life/Sprite, Animation full
