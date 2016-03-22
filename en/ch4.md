@@ -20,7 +20,7 @@ Here also there is no universal rule of what should be an actor and what compose
 
 We create a first actor **Game**, we create in it a new component Behavior and attach to it, the **GameBehavior** Class.
 
-![../img/4/gameScene1.png](../img/4/gameScene1.png)
+![img/4/gameScene1.png](img/4/gameScene1.png)
 
 The Game actor won't have a visual effect but simply attach the Game behavior to the Game scene, the behavior will load when the scene itself load.
 
@@ -31,7 +31,7 @@ To have a game screen we need a camera, we create a new actor **Camera** with a 
 We check the position default is x = 0, y = 0 and we set the z position to 30, we give a lot of space for all the actors to be placed inside the camera area on Z axis, between 0 and 30 units.
 We set the camera Mode to Orthographic and the Scale to 30 (remember 30 units of 16 pixels = 480).
 
-![../img/4/gameScene2.png](../img/4/gameScene2.png)
+![img/4/gameScene2.png](img/4/gameScene2.png)
 
 We now have our camera set, we will place the background and the HUD (the user interface).
 
@@ -43,7 +43,7 @@ We set the position to z at 25 in a way to have all the elements of the HUD to c
 We first add a **Timer** actor child of the HUD to position (0, 14, 0), which will be the main game timer. We attach a new component Text Renderer. 
 We attach our Font to it and set the color to yellow. (code : f7eaa4)
 
-![../img/4/gameScene3.png](../img/4/gameScene3.png)
+![img/4/gameScene3.png](img/4/gameScene3.png)
 
 We now create a **UIShip1** actor, child of HUD to position (-12, 12, 0), a **UIShip2** actor, child of HUD to position (10, 12, 0) and an **UIAlien** actor, child of HUD to position (0, -14, 0).
 
@@ -52,7 +52,7 @@ We set off the visibility of UIShip2 actor because we want a default configurati
 We create two Score Actor childs of actors UIShip1 and UIShip2 to Position (1, 2, 0), and we attach to both of them a Text Renderer with the Font Font, 
 a default Text 0 and colors for HUD/UIShip1/Score of afccf8 and for HUD/UIShip2/Score of f8b194.
 
-![../img/4/gameScene4.png](../img/4/gameScene4.png)
+![img/4/gameScene4.png](img/4/gameScene4.png)
 
 To place on the screen the life hearts, we going to place them individually, one heart for one actor with each a new component sprite renderer with the heart sprite related to ship1, ship2 or alien. 
 It is an easy way to access from the code later to each heart and change the status of the one we are interested to. We give the same name of an heart with it's position index.
@@ -84,7 +84,7 @@ Alien have 5 hearts, here all the parameters of the HUD to configure the hearts 
          
 We have now a complete HUD :
 
-![../img/4/gameScene5.png](../img/4/gameScene5.png)
+![img/4/gameScene5.png](img/4/gameScene5.png)
 
 ##### Background
 
@@ -95,7 +95,7 @@ should be the same than the top of the camera.
 
 Here the final result we want to achieve :
 
-![../img/4/gameScene6.png](../img/4/gameScene6.png)
+![img/4/gameScene6.png](img/4/gameScene6.png)
 
 We can set the Game Scene as the startup scene and start the game to see if everything work fine.
 
@@ -122,7 +122,7 @@ Here the differents parameters :
    * Spacewar, Position (0, 0, 40), Sprite Renderer, Sprite *Menu/Screens/Spacewar/Sprite*
    * GameOver, Position (0, 0, 60), Sprite Renderer, Sprite *Menu/Screens/GameOver/Sprite*
 
-![../img/4/menuScene1.png](../img/4/menuScene1.png)
+![img/4/menuScene1.png](img/4/menuScene1.png)
 
 ##### Buttons
 
@@ -151,7 +151,7 @@ We create an actor Title with two actors Text1 and Text2, both with a text Rende
    
 Once button and title is set, we should have something like this :
 
-![../img/4/menuScene2.png](../img/4/menuScene2.png)
+![img/4/menuScene2.png](img/4/menuScene2.png)
 
 
 #### Ship Prefab
@@ -197,7 +197,7 @@ Ship/0/Prefab
       * 0, Position (2.1, -2.76, 0), Sprite Renderer, Sprite *Ship/Boost/Sprite*
       * 1, Position (-2.1, -2.76, 0), Sprite Renderer, Sprite *Ship/Boost/Sprite*
 
-![../img/4/shipPrefab1.png](../img/4/shipPrefab1.png)
+![img/4/shipPrefab1.png](img/4/shipPrefab1.png)
 
 Ship/1/Prefab
 * Ship2, Position(0, 0, 0), Orientation(0, 0, **-90**), Behavior, Class ShipBehavior
@@ -208,7 +208,7 @@ Ship/1/Prefab
       * 0, Position (2.1, -2.76, 0), Sprite Renderer, Sprite *Ship/Boost/Sprite*
       * 1, Position (-2.1, -2.76, 0), Sprite Renderer, Sprite *Ship/Boost/Sprite*
 
-![../img/4/shipPrefab2.png](../img/4/shipPrefab2.png)
+![img/4/shipPrefab2.png](img/4/shipPrefab2.png)
 
 
 #### Ship Missile Prefab
@@ -223,13 +223,13 @@ We create an actor Missile with a Behavior component to which we attach the Clas
 
 Child of Missile actor, we create an actor Sprite with a component Sprite Renderer and the Sprite Ship/0/Missile/Sprite for Ship1 and Ship/1/Missile/Sprite for Ship2.
 
-![../img/4/missilePrefab1.png](../img/4/missilePrefab1.png)
+![img/4/missilePrefab1.png](img/4/missilePrefab1.png)
 
 ##### Body
 
 Child of Missile actor, we create an actor Body with a component Arcade Body 2D with a size of (0.5, 0.5).
 
-![../img/4/missilePrefab2.png](../img/4/missilePrefab2.png)
+![img/4/missilePrefab2.png](img/4/missilePrefab2.png)
 
 Ship/0/Missile/Prefab
 * Missile, Position(0, 0, 0)
@@ -269,7 +269,7 @@ Alien/Prefab
    * Body, Arcade Body 2D, Type Box, Size (**3, 2**)
    * Destruction, Scale (1.5, 1.5, 1.5), Sprite Renderer, Sprite *Alien/Explosion/Sprite*
    
-![../img/4/alienPrefab.png](../img/4/alienPrefab.png)
+![img/4/alienPrefab.png](img/4/alienPrefab.png)
 
    
 #### Alien Missile Prefab
@@ -282,7 +282,7 @@ See Ship Missile description.
    * Sprite, Sprite Renderer, Sprite *Alien/Missile/Sprite*
    * Body, Arcade Body 2D, Type Box, Size (**0.6, 0.6**)
 
-![../img/4/missilePrefab3.png](../img/4/missilePrefab3.png)
+![img/4/missilePrefab3.png](img/4/missilePrefab3.png)
 
 #### Asteroid Prefab
 
@@ -294,6 +294,6 @@ Like for the Ship and Alien we create actors with their related component and pa
    * Body, Arcade Body 2D, Type Box, Size (**2, 2**)
    * Destruction, Sprite Renderer, Sprite *Asteroid/Explosion/Sprite*
 
-![../img/4/asteroidPrefab.png](../img/4/asteroidPrefab.png)
+![img/4/asteroidPrefab.png](img/4/asteroidPrefab.png)
 
 [<-- back to chapter 3](ch3.md) -- [go to chapter 5 -->](ch5.md)

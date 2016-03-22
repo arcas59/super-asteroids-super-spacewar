@@ -2,9 +2,6 @@
 ## SUPER ASTEROIDS and SUPER SPACEWAR
 ### **Learn game development while revisiting video game history**
 
-![img/asteroids.png](img/asteroids.png)
-![img/spacewar.png](img/spacewar.png)
-
 * [Chapter 1 : Plan the game](ch1.md)
     * [Planning the game](ch1.md#planning-the-game)
     * [Game features](ch1.md#game-features)

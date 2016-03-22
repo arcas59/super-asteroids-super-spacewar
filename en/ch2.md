@@ -19,7 +19,7 @@ For our game, we have a menu, a background, a player ship, an alien ship, many a
 Sounds. We can also consider that our Main game is an object. Here, by creating differents folders, 
 our basic structure with all the objects we will use :
 
-![../img/2/structure0folders.png](../img/2/structure0folders.png)
+![img/2/structure0folders.png](img/2/structure0folders.png)
 
 We will now see the structure of each object and loads all assets related to it.
 
@@ -40,7 +40,7 @@ We can also create now the main game Scene.
    * Game (script)
 
 
-![../img/2/structure1game.png](../img/2/structure1game.png)
+![img/2/structure1game.png](img/2/structure1game.png)
 
 
 #### Menu Structure
@@ -74,7 +74,7 @@ Also, we need a **Button** sprite for our menu buttons.
    * Button (folder)
       * Sprite (sprite)
       
-![../img/2/structure2menu.png](../img/2/structure2menu.png)
+![img/2/structure2menu.png](img/2/structure2menu.png)
    
 *Note : Ultimately, the Menu/Scene will be set as the Startup Scene from the game settings, but because 
 we develop our game first (and the menu as a polishing work) we can set the Game/Scene as the Startup Scene. 
@@ -89,7 +89,7 @@ The background object contain the script with the background behavior and the sp
    * Background (script)
    * Sprite (sprite)
    
-![../img/2/structure3background.png](../img/2/structure3background.png)
+![img/2/structure3background.png](img/2/structure3background.png)
 
 
 #### Ship Structure
@@ -136,7 +136,7 @@ We need differents sprites for each ship, the life icon, the missile sprite and 
       * Explosion (folder)
          * Sprite (sprite)
 
-![../img/2/structure4ship.png](../img/2/structure4ship.png)
+![img/2/structure4ship.png](img/2/structure4ship.png)
 
 
 #### Alien Structure
@@ -160,7 +160,7 @@ and serve as a template than we use each time we need a missile to appear in the
    * Explosion (folder)
       * Sprite (sprite)
 
-![../img/2/structure5alien.png](../img/2/structure5alien.png)
+![img/2/structure5alien.png](img/2/structure5alien.png)
 
 
 #### Asteroid Structure
@@ -174,7 +174,7 @@ The asteroid object has a behavior script, a prefab and a 3D model, it also has 
    * Explosion (folder)
       * Sprite (sprite)
     
-![../img/2/structure6asteroid.png](../img/2/structure6asteroid.png)
+![img/2/structure6asteroid.png](img/2/structure6asteroid.png)
 
 #### Sound Structure
 
@@ -187,7 +187,7 @@ The sounds contains sound assets :
    * explosion
    * shotContact
 
-![../img/2/structure7soundfont.png](../img/2/structure7soundfont.png)
+![img/2/structure7soundfont.png](img/2/structure7soundfont.png)
 
 #### Font
 
