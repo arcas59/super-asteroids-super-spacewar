@@ -7,11 +7,7 @@
 * [Chapter 5: Building the basic program structure](ch5.md)
 * [Chapter 6: Writing Alien and Asteroids behaviors](ch6.md)
 * [Chapter 7: Writing Ship and Missile behavior](ch7.md)
-* Writing Collisions, Lifes and Points system.
-   * Collision system
-   * Explosions animation
-   * Displaying life
-   * Displaying points
+* [Writing Collision, Life and Score systems](ch8.md)
 * Settings menus and two differents game in one
    * Main menu 
    * Transition menu
