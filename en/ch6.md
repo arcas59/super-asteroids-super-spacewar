@@ -50,8 +50,8 @@ We also want that alive turn false when the alien ship is destroyed, there is a 
     let randomShip: number = Sup.Math.Random.integer(0, 2);
     // Get the default size related to the random index
     this.size = Alien.sizes[randomShip];
-    // Get the default amplitude related to the random index
-    this.amplitude = Alien.amplitude[randomShip];
+    // Get the default collision amplitude related to the random index
+    this.amplitude = Alien.amplitudes[randomShip];
     // Set the size to the actor
     this.actor.setLocalScale(this.size);
     // Set the value of Alien.startLife to the current Alien.lifes
@@ -212,6 +212,8 @@ Inside the Asteroid/Asteroid script, we first initialize the local datas than we
 class AsteroidBehavior extends Sup.Behavior {
   // The size of the asteroid
   size: number;
+  // The amplitude of this asteroid Actor
+  amplitude: number;
   // The class of size this asteroid belong
   sizeClass: string;
   // The position of the asteroid
@@ -286,6 +288,8 @@ When the asteroids has finish to spawn, we use the start method to get the rando
     this.rotationSpeed = Sup.Math.Random.float(Asteroids.rotationSpeed.min, Asteroids.rotationSpeed.max);
     // Set the asteroid size related to the classSize of the asteroid
     this.size = Asteroids.sizes[this.sizeClass];
+    // Set the asteroid collision amplitude related to the classSize of the asteroid
+    this.amplitude = Asteroids.amplitudes[this.sizeClass];
     // Set the size to the actor model
     this.actor.getChild("Model").setLocalScale(this.size);
 [...] 
@@ -303,7 +307,7 @@ We write the process of death of the asteroid in a death method than we will cal
     // Set visible off the asteroid model
     this.actor.getChild("Model").setVisible(false);
     // Set the sprite animation explode to play once without looping
-    this.actor.getChild('Destroy').spriteRenderer.setAnimation("explode", false);
+    this.actor.getChild('Destruction').spriteRenderer.setAnimation("explode", false);
     // Give 30 frames before actor destruction (half a second)
     this.deathTimer = 30;
     // We give the points to ship1 related to the classSize of this asteroid 

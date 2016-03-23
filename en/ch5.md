@@ -89,6 +89,8 @@ We write the ship datas :
 namespace Ships{
   // Default ship size
   export const size: number = 0.5;
+  // Default ship collision radius
+  export const amplitude: number = 1.5;
   // Starting ship score
   export const startScore: number = 0;
   // Starting ship life
@@ -156,9 +158,9 @@ namespace Alien{
   export const zPosition: number = 12;
   
   // Different alien sizes
-  export const sizes: number[] = [1.6, 1.3, 1];
-  // Different collision amplitude on x and y axis
-  export const amplitude: number[] = [2, 1.5, 1];
+  export const sizes: number[] = [1.7, 1.3, 1];
+  // Different collision amplitude related to size
+  export const amplitudes: number[] = [2, 1.5, 1.2];
   
   // Linear and rotation speed of alien ship
   export let linearSpeed: number = 0.05;
@@ -189,6 +191,8 @@ namespace Asteroids{
   
   // Differents size of asteroids
   export const sizes = {"big":1.5, "medium":1, "small":0.5};
+  // Different collision amplitude related to size
+  export const amplitudes = {"big":1.5, "medium":1, "small":0.5}
   
   // Range for Z positions of asteroids
   export enum zPositions {min = -28, max = 10};

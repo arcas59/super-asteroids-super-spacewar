@@ -77,9 +77,6 @@ namespace Game{
     else {
       Ship.setLocalPosition(Ships.spawns[2]);
     }
-    // NEED TO CHANGE ??
-    // Set the ship default size to half size
-    Ship.setLocalScale(Ships.size, Ships.size, Ships.size);
   }
 }
 [...]
@@ -115,6 +112,8 @@ We open the Ship script and first initialize the ship local datas we will use in
 class ShipBehavior extends Sup.Behavior {
   // Ship index, 0 is ship 1, 1 is ship 2
   index: number;
+  // Ship radius collision
+  amplitude: number;
   // Ship current life
   lifes: number;
   // Ship current score
@@ -172,6 +171,10 @@ Then when the actor is loaded, we can get its parameters and set the local varia
 ```ts
 [...]
   start() {
+    // Set the ship default size to half size
+    this.actor.setLocalScale(Ships.size);
+    // Set the ship default amplitude related to size
+    this.amplitude = Ships.amplitude;
     // Get the starting position to become the spawnPosition of this behavior
     this.spawnPosition = this.actor.getLocalPosition().toVector2();
     // Get the starting position to become the current position of this behavior
@@ -290,18 +293,37 @@ class ShipMissileBehavior extends Sup.Behavior {
 
 ##### ship boost
 
-We add a little sprite when the ship is moving with this method.
+We add a little sprite game when the ship is moving or rotating with this two methods.
 
 ```ts
 [...]
   boost(intensity: string) {
     // Create a new variable boost that get the Boost actor child of Ship actor
     let boost:Sup.Actor = this.actor.getChild("Boost");
-    // Set the boost visible true
+    // Set the boost actor visible true
     boost.setVisible(true);
-    // Set animation to both sprit with the intensity normal or fast
+    // Set animation to both sprite with the intensity normal or fast
     boost.getChild("0").spriteRenderer.setAnimation(intensity);
     boost.getChild("1").spriteRenderer.setAnimation(intensity);
+  }
+  
+  rotateBoost(direction: string) {
+    // Create a new variable boost that get the Boost actor child of Ship actor
+    let boost:Sup.Actor = this.actor.getChild("Boost");
+    // Set the boost actor visible true
+    boost.setVisible(true);
+    // If rotate on the left direction
+    if(direction === "left"){
+      // Switch animation for right boost stronger
+      boost.getChild("0").spriteRenderer.setAnimation("fast");
+      boost.getChild("1").spriteRenderer.setAnimation("normal");
+    }
+    // If rotate on the right direction
+    if(direction === "right"){
+      // Switch animation for left boost stronger
+      boost.getChild("1").spriteRenderer.setAnimation("fast");
+      boost.getChild("0").spriteRenderer.setAnimation("normal");
+    }
   }
 [...]
 ```
@@ -350,7 +372,7 @@ Now we have all our methods ready, we can write the whole process of the player 
         this.shoot();
       }
     }
-    
+     
     // Keep moving
     // If forward key is pressed down
     if (Sup.Input.isKeyDown(Ships.commands[this.index].forward)){
@@ -371,7 +393,7 @@ Now we have all our methods ready, we can write the whole process of the player 
         }
     }
     else {
-      // If the forward key is not pressed, the Boost actor set visible false
+      // Set visible false booster if not going forward
       this.actor.getChild("Boost").setVisible(false);
     }
     
@@ -380,12 +402,26 @@ Now we have all our methods ready, we can write the whole process of the player 
     if (Sup.Input.isKeyDown(Ships.commands[this.index].left)){
       // The angularVelocity get the angularAcceleration
       this.angularVelocity += Ships.angularAcceleration;
+      // Boost sprite for left side
+      this.rotateBoost("left");
     }
+    
     // If right key is pressed down
     if (Sup.Input.isKeyDown(Ships.commands[this.index].right)){
       // The angularVelocity get the opposite angularAcceleration
       this.angularVelocity -= Ships.angularAcceleration;
+      // Boost sprite for left side
+      this.rotateBoost("right");
     }
+    
+    // Set boost to default if key left, right and forward are NOT pressed
+    if (!Sup.Input.isKeyDown(Ships.commands[this.index].left) && 
+        !Sup.Input.isKeyDown(Ships.commands[this.index].right) && 
+        !Sup.Input.isKeyDown(Ships.commands[this.index].forward)){
+          this.actor.getChild("Boost").setVisible(false);
+          this.actor.getChild("Boost").getChild("0").setVisible(true);
+          this.actor.getChild("Boost").getChild("1").setVisible(true);
+        }
     
     // Keep slowing down
     // The linearVelocity multiply the linearDamping
