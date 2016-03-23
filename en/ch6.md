@@ -17,6 +17,8 @@ We first initialize the local datas we need for the alien ship actor in the Alie
 class AlienBehavior extends Sup.Behavior {
   // Ship size of this Actor
   size: number;
+  // Ship amplitude of this Actor
+  amplitude: number;
   // Ship position
   position: Sup.Math.Vector2;
   // Ship linear movement
@@ -33,7 +35,7 @@ Sup.registerBehavior(AlienBehavior);
 ##### Alien awakening and closing
 
 We first give life to our Alien by giving a true to the flag alive when the behavior wake up. 
-We choose randomly a size and set it to the actor to which apply this behavior.
+We choose randomly an index to get a different size (with related amplitude) each new alien ship and set it to the Actor.
 And we set some value to start, the lifes, the shooting timer and the checkLifeHUD flag which give a signal for an other process in the game to update the HUD with the new alien life. (We will write this process later)
 
 We also want that alive turn false when the alien ship is destroyed, there is a default method onDestroy() we can use. We also give to the spawn time before a new alien ship appear the default Respawn time.
@@ -44,8 +46,12 @@ We also want that alive turn false when the alien ship is destroyed, there is a 
   awake() {
     // Set Alien.alive flag to true
     Alien.alive = true;
-    // Get a random size from Alien.sizes
-    this.size = Sup.Math.Random.sample(Alien.sizes);
+    // Get a random index for alien ship size and amplitude
+    let randomShip: number = Sup.Math.Random.integer(0, 2);
+    // Get the default size related to the random index
+    this.size = Alien.sizes[randomShip];
+    // Get the default amplitude related to the random index
+    this.amplitude = Alien.amplitude[randomShip];
     // Set the size to the actor
     this.actor.setLocalScale(this.size);
     // Set the value of Alien.startLife to the current Alien.lifes

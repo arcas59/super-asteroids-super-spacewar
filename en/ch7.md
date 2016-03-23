@@ -77,10 +77,9 @@ namespace Game{
     else {
       Ship.setLocalPosition(Ships.spawns[2]);
     }
+    // NEED TO CHANGE ??
     // Set the ship default size to half size
     Ship.setLocalScale(Ships.size, Ships.size, Ships.size);
-    // Set the ship default body to half size
-    Ship.getChild("Body").arcadeBody2D.setSize(Ships.body, Ships.body);
   }
 }
 [...]
@@ -483,7 +482,7 @@ When a missile born we add it to the global list of missiles that we will use to
   [...]
   onDestroy(){
     // Remove the current actor from the Global list from the shipIndex owner
-    Ships.missiles[this.shipIndex].splice(Ships.missiles[this.shipIndex].indexOf(this.actor));
+    Ships.missiles[this.shipIndex].splice(Ships.missiles[this.shipIndex].indexOf(this.actor), 1);
   }
   [...]
 ``` 

@@ -31,6 +31,9 @@ namespace Game{
     height:number
   }
   
+  // set a border of 2 x 1.5 units (invisible border of 24 pixels)
+  let border: number = 3;
+  
   // Game points won when target shot
   export enum points {
     asteroidBig = 10,
@@ -86,8 +89,6 @@ We write the ship datas :
 namespace Ships{
   // Default ship size
   export const size: number = 0.5;
-  // Default ship body
-  export const body: number = 2;
   // Starting ship score
   export const startScore: number = 0;
   // Starting ship life
@@ -156,6 +157,8 @@ namespace Alien{
   
   // Different alien sizes
   export const sizes: number[] = [1.6, 1.3, 1];
+  // Different collision amplitude on x and y axis
+  export const amplitude: number[] = [2, 1.5, 1];
   
   // Linear and rotation speed of alien ship
   export let linearSpeed: number = 0.05;
@@ -347,9 +350,7 @@ namespace Game{
   export function start(){
     // get the Camera actor the the game Scene
     let screen = Sup.getActor("Camera").camera;
-    // set a border of 2 x 1.5 units (invisible border of 24 pixels)
-    let border: number = 3;
-    // We get the game screen bounds and add a border of 3 units
+    // We get the game screen bounds and add the invisible border
     bounds = {
       width: screen.getOrthographicScale() + border,
       height: screen.getOrthographicScale() + border
@@ -382,10 +383,12 @@ We then call the function at the begining of the awake method of our Game script
     // Create the three axis positions x, y, z
     let x: number = 0, y: number = 0, z: number = 0;
     
-    // Choose randomly a position on one of the vertical edges
+     // Choose randomly a position on one of the vertical edges
     x = Sup.Math.Random.sample([-bounds.width / 2, bounds.width / 2]);
+    // Get the height without the invisible border
+    let height = bounds.height - border
     // Choose randomly a position on y axis
-    y = Sup.Math.Random.integer(-bounds.height / 2, bounds.height / 2);
+    y = Sup.Math.Random.integer(-height / 2 , height / 2);
     // Get alien default Z position
     z = Alien.zPosition;
     
