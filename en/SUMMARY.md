@@ -8,10 +8,7 @@
 * [Chapter 6: Writing Alien and Asteroids behaviors](ch6.md)
 * [Chapter 7: Writing Ship and Missile behavior](ch7.md)
 * [Chapter 8: Writing Collision, Life and Score systems](ch8.md)
-* Settings menus and two differents game in one
-   * Main menu 
-   * Transition menu
-   * Game over screen and score display
+* [Chapter 9: Setting menu and game over screens](ch9.md)
 * Polishing the game
    * Background scrolling
    * Music and sounds

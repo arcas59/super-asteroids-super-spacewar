@@ -5,6 +5,7 @@
 * [Chapter 1 : Plan the game](ch1.md)
     * [Planning the game](ch1.md#planning-the-game)
     * [Game features](ch1.md#game-features)
+    * [Gameplay manual](ch1.md#gameplay-manual)
 * [Chapter 2 : Building the game structure](ch2.md#building-the-game-structure)
     * [Game Structure](ch2.md#game-structure)
     * [Menu Structure](ch2.md#menu-structure)
@@ -41,3 +42,4 @@
     * [Ship missiles](ch7.md#ship-missiles)
     * [Alien missiles](ch7.md#alien-missiles)
 * [Chapter 8: Writing Collision, Life and Score systems](ch8.md)
+* [Chapter 9: Setting menu and game over screens](ch9.md)
