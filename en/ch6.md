@@ -292,6 +292,8 @@ When the asteroids has finish to spawn, we use the start method to get the rando
     this.amplitude = Asteroids.amplitudes[this.sizeClass];
     // Set the size to the actor model
     this.actor.getChild("Model").setLocalScale(this.size);
+    // Set the size to the destruction sprite
+    this.actor.getChild("Destruction").setLocalScale(this.size * 2);
 [...] 
 ```
 
