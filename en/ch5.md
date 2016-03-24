@@ -192,7 +192,7 @@ namespace Asteroids{
   // Differents size of asteroids
   export const sizes = {"big":1.5, "medium":1, "small":0.5};
   // Different collision amplitude related to size
-  export const amplitudes = {"big":1.5, "medium":1, "small":0.5}
+  export const amplitudes = {"big":2.5, "medium":2, "small":1}
   
   // Range for Z positions of asteroids
   export enum zPositions {min = -28, max = 10};
