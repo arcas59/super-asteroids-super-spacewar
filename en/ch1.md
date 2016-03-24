@@ -29,6 +29,21 @@ We will build three games in one, inspired by :
 * Complete collision system between actors (ships, missiles, asteroids, alien).
 * An easy way to reuse the game objects and build new mods.
 
+### **Gameplay manual**
+
+We navigate in the menu with the mouse.
+
+* Ship 1
+Control the ship 1 with the keyboard arrow, **UP** to go forward, **LEFT** to rotate left, **RIGHT** to rotate right
+We can also use booster with the key **SHIFT**
+To shoot, the key is **CONTROL**
+
+* Ship 2
+For the ship 2, forward is **W**, left is **A**, right is **D**, booster is **C** and shooting is **ESPACE**
+
+* Game options
+We can leave the game at any moment by pressing **Escape** and return in the menu. We can also restart the game with the key **R**.
+
 [1]: https://en.wikipedia.org/wiki/Spacewar_(video_game)
 [2]: https://en.wikipedia.org/wiki/Asteroids_(video_game)
 [3]: https://en.wikipedia.org/wiki/Star_Castle
