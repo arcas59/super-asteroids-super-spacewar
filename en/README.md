@@ -40,4 +40,4 @@
     * [the shipBehavior class](ch7.md#the-shipbehavior-class)
     * [Ship missiles](ch7.md#ship-missiles)
     * [Alien missiles](ch7.md#alien-missiles)
-* [Writing Collision, Life and Score systems](ch8.md)
+* [Chapter 8: Writing Collision, Life and Score systems](ch8.md)
