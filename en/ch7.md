@@ -116,6 +116,8 @@ class ShipBehavior extends Sup.Behavior {
   amplitude: number;
   // Ship current life
   lifes: number;
+  // Ship status
+  alive: boolean;
   // Ship current score
   score: number;
   // Spawn position
@@ -154,6 +156,8 @@ When the ship awake, we need to set some variables.
   awake() {
     // Starting life to 3
     this.lifes = Ships.startLife;
+    // Set true to alive status
+    this.alive = true;
     // Starting score to 0
     this.score = Ships.startScore;
     // Starting speed movement on x and y axis to 0
@@ -195,6 +199,8 @@ We define a method for the death of the player ship.
   die() {
     // Decrease life of one
     this.lifes--;
+    // Set false to alive status
+    this.alive = false;
     // Flag to check and update the life HUD
     Game.checkLifeHUD = true;
     // If life is 0, then the game is over
@@ -227,8 +233,19 @@ We define a method for the death of the player ship.
     this.spawnCooldown = Ships.respawnTimer;    
     // Set ship model visibility to false
     this.actor.getChild('Model').setVisible(false);
+    // Set ship boosts visibility to false
+    this.actor.getChild('Boost').setVisible(false);
     // Set sprite animation explosition to play once
     this.actor.getChild('Destruction').spriteRenderer.setAnimation("explode", false);
+    // Reset speed movement on x and y axis to 0
+    this.linearVelocity.set(0, 0);
+    // Reset angle to default for ship 1 or ship 2
+    if (this.index === 0){
+      this.angle = 1.6;
+    }
+    else{
+      this.angle = -1.6;
+    }
   }
 [...]
 ``` 
@@ -339,7 +356,8 @@ Now we have all our methods ready, we can write the whole process of the player 
 * Keep slowing down, slow down the acceleration of linear and angular velocities
 * Stay on the game screen, same as asteroids and alien ship
 * Update position and angle, report behavior change to the Actor
-* Blinking, to display ship invincibility
+* Blinking, to display ship invincibility, it is placed after the moving, rotating blocks of code but will return before the collisions
+because as long at it will blink, the ship won't be able to take damages but is still maneuverable.
 
 ```ts
 [...]
@@ -463,11 +481,16 @@ Now we have all our methods ready, we can write the whole process of the player 
       this.invincibilityCooldown--;
       // Set actor visible become true every half second, false the other half and stay visible at the end
       this.actor.setVisible(this.invincibilityCooldown % 60 < 30);
+      // When invincibilityCooldown reach 1, get back vulnerability
+      if (this.invincibilityCooldown === 1) {
+        // Set true to alive status
+        this.alive = true;  
+      }
       // Restart update loop to skip the collision code
       return;
     }
-    
-    // Collision code will come here
+   
+    // Collision code will come here, we remove this block when ch8 start
     if (Sup.Input.wasKeyJustPressed("X")){
       this.die(); // Temporary debug test for ship death, press keyboard X to kill the ship
     }
