@@ -68,10 +68,10 @@ namespace Menu{
   
   // Different menu screen index
   export const screens = {
-      main : 0,
-      asteroids : 1,
-      spacewar : 2,
-      gameover : 3,
+      main : "Main",
+      asteroids : "Asteroids",
+      spacewar : "Spacewar",
+      gameover : "GameOver",
      }
   
   // Game names index
@@ -222,13 +222,13 @@ We now have all our datas ready to use in our program.
 The GameBehavior class in ou **Game** script will be used as the main process running when our game start after we launch it from the menu. There will be differents branch
 in this behavior depending which game is running. *By example, if the game is Game.nameIndex is 0 (Asteroids), then we can spawn the alien and the asteroids, else we don't.*
 
-Let's start to write some process of the game.
+Let's start to write some process of the game. (we use the start method and not the awake method to init the behavior)
 
 ```ts
 class GameBehavior extends Sup.Behavior {
   timer: number;
 
-  awake() {
+  start() {
     // When GameBehavior awake, if game is Asteroids then spawn asteroids and alien
     if(Game.nameIndex === 0){
       // Give to this game instance, the starting timer

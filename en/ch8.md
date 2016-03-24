@@ -1,4 +1,3 @@
-Collision to see for alien ship script alienbehavior
 # SUPERPOWERS TUTORIAL #4
 ## SUPER ASTEROIDS and SUPER SPACEWAR, Chapter 8
 
@@ -430,3 +429,5 @@ Now, in the Game script we simply check the flag checkHUDLife to see when to cal
 
 The HUD working fine, we need to work the menu screen inside our game mechanic to be also able to conclude the game when the ship have no more life or the timer is out with a game over screen.
 Let's finish our game with the next chapter. 
+
+[<-- back to chapter 7](ch7.md) -- [go to chapter 9 -->](ch9.md)

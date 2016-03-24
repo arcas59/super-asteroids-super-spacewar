@@ -126,17 +126,17 @@ Here the differents parameters :
 
 ##### Buttons
 
-We create an actor Buttons with two child actors Button1 and Button2 which both have a sprite and a text actor.
+We create an actor Buttons with two child actors Button1 and Button2 which both have a sprite and a text actor (the text is a bit above the sprite on the z axis).
 
 Here the parameters for all actors :
 
 * Buttons, Position (0, 0, 80)
    * Button1, Position (6, -7, 0)
       * Sprite, Sprite Renderer, Sprite *Menu/Button/Sprite*
-      * Text, Text Renderer, Font Font, Text START
+      * Text, Position (0, 0, **2**), Text Renderer, Font Font, Text START
    * Button2, Position (6, -12, 0)
       * Sprite, Sprite Renderer, Sprite *Menu/Button/Sprite*
-      * Text, Text Renderer, Font Font, Text RETURN
+      * Text, Position (0, 0, **2**), Text Renderer, Font Font, Text RETURN
 
 
 ##### Title
