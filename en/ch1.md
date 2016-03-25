@@ -9,7 +9,7 @@ We will build three games in one, inspired by :
 
 * [Asteroids][2] is a famous arcade shooter released in 1979, it's gameblay involve a ship avoiding and shooting asteroids and aliens ships.
 
-* [Star Castle][3], the game that we will build as a mod example, imply shooting an Alien ship by first detroying the armor that protect it.
+* [Star Castle][3] is a famous arcade shooter released in 1980, this game will be build as a mod example, it imply shooting an Alien ship by first detroying the armor that protect it.
 
 ![img/asteroids.png](img/asteroids.png)
 ![img/spacewar.png](img/spacewar.png)
