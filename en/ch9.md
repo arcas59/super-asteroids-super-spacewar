@@ -1,7 +1,7 @@
 # SUPERPOWERS TUTORIAL #4
 ## SUPER ASTEROIDS and SUPER SPACEWAR, Chapter 9
 
-### Setting menu and game over screens
+### **Setting menu and game over screens**
 
 We will now set the menu which is the startup scene with the buttons that allow us to choose what game we want to play.
 
@@ -61,6 +61,10 @@ When the menu awake the first time, we want it to set the Main screen. We need t
   }
   
   updateTitle(){
+    // Set title visible true
+    Sup.getActor("Title").setVisible(true);
+    // Set score visible false
+    Sup.getActor("Score").setVisible(false);
     // Change the title depending if the game is asteroids or spacewar
     if(this.screen === Menu.screens.asteroids|| this.screen === Menu.screens.spacewar){
       Sup.getActor("Title").getChild("Text2").textRenderer.setText(this.screen);
@@ -205,17 +209,84 @@ namespace Game{
 
 Our menu is now working and we can choose in the menu the game we want to play.
 
-#### Game Over screen and final score
+#### Over screen and final score
+
+##### Global script : The Game.gameOver function 
+We will now set the game over screen when the game finish (there is two, way, one ship lose all it's life or the timer is out).
+
+We add a function in the Game module of the Global script.
+
+```ts
+[...]
+namespace Game{
+  [...]
+  // Load the gameOver screen and display score
+  export function gameOver(winner: string){
+    // Initialize variables
+    let score1: number;
+    let score2: number;
+    // Store the ship1 score before to leave the scene
+    score1 = Sup.getActor("Ship1").getBehavior(ShipBehavior).score;
+    // If the game is spacewar, stock also the Ship2 score
+    if (nameIndex === 1) {
+      score2 = Sup.getActor("Ship2").getBehavior(ShipBehavior).score;
+    }
+    // Close game scene and load menu scene
+    Sup.loadScene("Menu/Scene");
+    // Set game over Screen
+    Sup.getActor("Menu").getBehavior(MenuBehavior).setScreen(Menu.screens.gameover);
+    // Get in a variable gameOverScreen the gameover screen actor
+    let gameOverScreen = Sup.getActor("Screens").getChild(Menu.screens.gameover.toString());
+    // Set the Sprite from the actor to display the winner frame
+    gameOverScreen.spriteRenderer.setAnimation(winner);
+    // Display Score
+    // Set title visible false
+    Sup.getActor("Title").setVisible(false);
+    // Get the Score actor in a variable
+    let score: Sup.Actor = Sup.getActor("Score");
+    // Set the Score actor visible
+    score.setVisible(true);
+    // Set the score text to the current score of ship1
+    score.getChild("Ship1").textRenderer.setText("Ship1:"+score1);
+    // If the game is spacewar
+    if (nameIndex === 1) {
+      // Set visible true the score of Ship2
+      score.getChild("Ship2").setVisible(true);
+      // Set the score text to the current score of ship2
+      score.getChild("Ship2").textRenderer.setText("Ship2:"+score2);
+      
+    }
+    else {
+      // Set visible false the ship2 score
+      score.getChild("Ship2").setVisible(false);
+    }
+  }
+}
+[...]
+```
 
 #### Game options : Quit and Restart
-    // Restart game (R)
+
+In the game script, we add two little functionalities, the possibility to leave or restart the game at any moment.
+
+
+```ts
+[...]
+  update() {
+  [...]
+    // Restart game when key (R) is pressed, call Game.start function which reload the game scene
     if (Sup.Input.wasKeyJustPressed("R")) {
-      Sup.log("Restart.");
       Game.start();
     }
     
-    // Leave Game (ESCAPE)
+    // Leave Game when key (ESCAPE) is pressed, load the menu scene
     if (Sup.Input.wasKeyJustPressed("ESCAPE")) {
-      Sup.log("Leave game.");
       Sup.loadScene("Menu/Scene");
     }
+  }
+[...]
+```
+
+Our game is mostly finished, in the next chapter we will polish it to add the background scrolling and the sound effects.
+
+[<-- back to chapter 8](ch8.md) -- [go to chapter 10 -->](ch10.md)
