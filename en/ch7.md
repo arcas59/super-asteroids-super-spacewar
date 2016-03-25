@@ -216,7 +216,7 @@ We define a method for the death of the player ship.
         }
         // Else, this is ship 2 and it is a victory for ship 1
         else {
-          Sup.setTimeout(1000, function () { Game.gameOver() });
+          Sup.setTimeout(1000, function () { Game.gameOver("ship1") });
         }
       }
     }
@@ -239,6 +239,8 @@ We define a method for the death of the player ship.
     this.actor.getChild('Destruction').spriteRenderer.setAnimation("explode", false);
     // Reset speed movement on x and y axis to 0
     this.linearVelocity.set(0, 0);
+    // Reset angular movement to 0
+    this.angularVelocity = 0;
     // Reset angle to default for ship 1 or ship 2
     if (this.index === 0){
       this.angle = 1.6;
@@ -259,6 +261,10 @@ We don't forget to comment the Game.addPoints calls to do tests later without bu
   spawn() {
     // The ship respawn to spawn position
     this.position = this.spawnPosition.clone();
+    // Set the new current position to the Ship actor
+    this.actor.setLocalPosition(this.position);
+    // Set the new angle to the Ship actor
+    this.actor.setLocalEulerZ(this.angle);
     // The ship model visibility to true
     this.actor.getChild('Model').setVisible(true);
     // Set timer for invincibility
