@@ -160,7 +160,7 @@ namespace Alien{
   // Different alien sizes
   export const sizes: number[] = [1.7, 1.3, 1];
   // Different collision amplitude related to size
-  export const amplitudes: number[] = [2, 1.5, 1.2];
+  export const amplitudes: number[] = [2.5, 2.2, 2];
   
   // Linear and rotation speed of alien ship
   export let linearSpeed: number = 0.05;
@@ -287,8 +287,8 @@ class GameBehavior extends Sup.Behavior {
       // If timer at 0, then the game is finished.
       } 
       else {
-        // The game is over
-        Game.gameOver();
+        // The game is over, return ship1 score
+        Game.gameOver("ship1");
       }
     }
   }
