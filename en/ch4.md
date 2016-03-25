@@ -88,10 +88,18 @@ We have now a complete HUD :
 
 ##### Background
 
-Now we create a new actor Background far behind other actors Position (0, 0, **-30**) to wich we attach a new component Behavior with the class BackgroundBehavior.
+Now we create a new actor Background far behind other actors Position (0, 0, **-30**). We then create two child actor 1 and 2 to which we attach  to each 
+a new component Behavior with the class BackgroundBehavior.
 
-We create a child actor to Background actor name Sprite to the position (0, **-15**, 0) and we attach a new component Sprite Renderer with the *Background/Sprite*. (The top of the background sprite
-should be the same than the top of the camera.
+We create a child actor for both 1 and 2 actor, Sprite to the position (0, **-15**, 0) for 1 and (0, **-75**, 0) for 2 and we attach to each a new component 
+Sprite Renderer with the *Background/Sprite*. 
+(The top of the background sprite of 1 should be the same than the top of the camera and the top of the background sprite of 2 should be next to the bottom of 1)
+
+* Background, Position (0, 0, **-30**)
+  * 1, Position (0, **-15**, 0), Behavior BackgroundBehavior
+    * Sprite, Position (0, 0, 0), Sprite Renderer, Sprite Background/Sprite
+  * 2, Position (0, **-75**, 0), Behavior BackgroundBehavior
+    * Sprite, Position (0, 0, 0), Sprite Renderer, Sprite Background/Sprite
 
 Here the final result we want to achieve :
 
@@ -141,15 +149,27 @@ Here the parameters for all actors :
 
 ##### Title
 
-Here the parameters for all actors :
 
-We create an actor Title with two actors Text1 and Text2, both with a text Renderer. We change the size of the text here with the Scale of the actor.
+We create an actor Title with two childs actors Text1 and Text2, both with a text Renderer. We change the size of the text here with the Scale of the actor.
+
+Here the parameters for all actors :
 
 * Title, Position (0, 0, 80)
    * Text1, Position (0, 13, 0), Scale (2, 2, 2), Text Renderer, Font Font, Text SUPER
    * Text2, Position (0, 11, 0), Scale (2, 2, 2), Text Renderer, Font Font, No default text
-   
-Once button and title is set, we should have something like this :
+
+
+##### Score
+
+We create an actor Score with two childs actors Ship1 and Ship2, both with text Renderer component with the same Font. We change the size, colors, and set the position.
+
+Here the parameters for all actors :
+
+* Score, Position (0, 0, 90), Visible Off
+  * Ship1, Position (0, 5, 0), Scale (2, 2, 2), Text Ship1:9999, Color 6f92b9
+  * Ship2, Position (0, 0, 0), Scale (2, 2, 2), Text Ship2:9999, Color ef696c
+
+Once Buttons, Title and Score is set, we should have something like this :
 
 ![img/4/menuScene2.png](img/4/menuScene2.png)
 
