@@ -196,7 +196,6 @@ Finaly, in the root of our structure we can add the Font asset that we will use 
 
 #### Complete structure :
 
-See the final chapter, the complete reference source to see the complete game structure combined.
-// todo : add link
+See the [final chapter](ch12.md) for the complete reference source to see the complete game structure combined.
 
 [<-- back to chapter 1](ch1.md) -- [go to chapter 3 -->](ch3.md)

@@ -9,10 +9,6 @@
 * [Chapter 7: Writing Ship and Missile behavior](ch7.md)
 * [Chapter 8: Writing Collision, Life and Score systems](ch8.md)
 * [Chapter 9: Setting menu and game over screens](ch9.md)
-* Polishing the game
-   * Background scrolling
-   * Music and sounds
-* Modding the game
-   * Add a new mod to the game : Space Castle 
-   * ...(every step to build a game within the game)
-* Complete Game Source Reference
+* [Chapter 10: Polishing the game](ch10.md)
+* [Chapter 11: Modding the game](ch11.md)
+* [Chapter 12: Complete Game Source Reference](ch12.md)
