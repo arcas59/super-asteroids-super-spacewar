@@ -209,7 +209,7 @@ namespace Game{
 
 Our menu is now working and we can choose in the menu the game we want to play.
 
-#### Over screen and final score
+#### Game over screen and final score
 
 ##### Global script : The Game.gameOver function 
 We will now set the game over screen when the game finish (there is two, way, one ship lose all it's life or the timer is out).
